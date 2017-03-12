@@ -10,7 +10,8 @@
 
 <div class="blog-header">
   <h1 class="blog-title"><%=@article.title%></h1><span><%= link_to 'New Post', new_article_path %></span>
-  <p class="lead blog-description"><%=@article.text %></p>
+  <p class="date"><%= @article.created_at.strftime("Posted %m/%d/%Y ") %></p>
+  <p class="lead blog-description"><%=simple_format(@article.text) %></p>
 </div>
 
 <h2>Comments</h2>
