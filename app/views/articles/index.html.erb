@@ -1,9 +1,17 @@
 
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item inactive" href="#"></a>
+        </nav>
+      </div>
+    </div>
+
 <div class="container">
 
 <div class="blog-header">
   <h1 class="blog-title">The Ruby on Ray's Blog</h1><span><%= link_to 'New Post', new_article_path %></span>
-  <p class="lead blog-description">This is my very initial attempt at creating a blog using Ruby on Rails. I'm embaressingly proud of it.</p>
+  <p class="lead blog-description">This is my very initial attempt at creating a blog using Ruby on Rails.</p>
 </div>
 
 <div class="row">
@@ -13,14 +21,16 @@
     <div class="blog-post">
       <%@articles.each do |article| %>
       <h2 class="blog-post-title"><%=article.title %></h2>
-      <p><%= link_to 'Show', article_path(article) %> <span><%= link_to 'Edit', edit_article_path(article) %></span> 
-      <span><%= link_to 'Destroy', article_path(article),
+      <p><%= link_to 'Comment', article_path(article) %> <span><%= link_to 'Edit', edit_article_path(article) %></span> 
+      <span><%= link_to 'Delete', article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %> </span>
       
       </p>
-
-      <p><%= article.text %>
+            <p><%= article.text %>
       <% end %>
-    </div><!-- /.blog-post -->
-    
+    </div>
+
+    </div>
+  
+    </div><!-- /.container -->
