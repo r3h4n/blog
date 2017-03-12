@@ -19,7 +19,7 @@
   <div class="col-sm-8 blog-main">
 
     <div class="blog-post">
-      <%@articles.each do |article| %>
+      <%@articles.reverse_each do |article| %>
       <h2 class="blog-post-title"><%=article.title %></h2>
       <p><%= link_to 'Comment', article_path(article) %> <span><%= link_to 'Edit', edit_article_path(article) %></span> 
       <span><%= link_to 'Delete', article_path(article),
