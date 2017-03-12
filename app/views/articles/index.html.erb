@@ -21,13 +21,14 @@
     <div class="blog-post">
       <%@articles.reverse_each do |article| %>
       <h2 class="blog-post-title"><%=article.title %></h2>
+      <p class="date"><%= article.created_at.strftime("Posted %m/%d/%Y ") %></p>
       <p><%= link_to 'Comment', article_path(article) %> <span><%= link_to 'Edit', edit_article_path(article) %></span> 
       <span><%= link_to 'Delete', article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %> </span>
       
       </p>
-            <p><%= article.text %>
+            <p><%= simple_format(article.text) %>
       <% end %>
     </div>
 
