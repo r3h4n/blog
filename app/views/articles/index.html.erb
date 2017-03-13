@@ -10,8 +10,9 @@
 <div class="container">
 
 <div class="blog-header">
-  <h1 class="blog-title">The Ruby on Ray's Blog</h1><span><%= link_to 'New Post', new_article_path %></span>
+  <h1 class="blog-title">The Ruby on Ray's Blog</h1>
   <p class="lead blog-description">This is my very initial attempt at creating a blog using Ruby on Rails.</p>
+<span><%= link_to 'New Post', new_article_path %></span>
 </div>
 
 <div class="row">
@@ -33,5 +34,20 @@
     </div>
 
     </div>
+    
+    
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <div class="sidebar-module">
+            <h4 class ="project_heading">Projects</h4>
+            <ol class="list-unstyled">
+              <li><a href="#"><%=link_to 'My Recipes', 'https://rehan-myrecipes.herokuapp.com' %> </a></li>
+        
+            </ol>
+          </div>
+          </div>
+          </div>
+
   
     </div><!-- /.container -->
+    
