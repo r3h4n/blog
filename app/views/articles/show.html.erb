@@ -10,7 +10,7 @@
 
 <div class="blog-header">
   <h1 class="blog-title"><%=@article.title%></h1>
-  <p class="date"><%= @article.created_at.strftime("Posted %m/%d/%Y ") %></p>
+ <span class ="quiet"><small>Created <%= time_ago_in_words(@article.created_at) %> ago </small></span>
   <p class="lead blog-description"><%=simple_format(@article.text) %></p>
 </div>
 
