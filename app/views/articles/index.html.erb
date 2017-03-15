@@ -29,7 +29,7 @@
               data: { confirm: 'Are you sure?' } %> </span>
       
       </p>
-            <p><%= truncate(article.text, length: 150) %> <%if article.text.length > 150 %> <%=link_to 'See more', article_path(article) %><%end %>
+            <p><%= truncate(article.text, length: 300) %> <%if article.text.length > 300 %> <%=link_to 'See more', article_path(article) %><%end %>
       <% end %>
     </div>
 
