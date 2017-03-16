@@ -29,12 +29,11 @@
               data: { confirm: 'Are you sure?' } %> </span>
       
       </p>
-            <p><%= truncate(article.text, length: 300) %> <%if article.text.length > 300 %> <%=link_to 'See more', article_path(article) %><%end %>
+            <p><%= truncate(article.text, length: 300) %> <%if article.text.length > 300 %> <%=link_to 'See more', article_path(article) %><%end %></p>
       <% end %>
     </div>
 
     </div>
-    
     
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">

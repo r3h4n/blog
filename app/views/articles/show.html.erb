@@ -10,9 +10,10 @@
 
 <div class="blog-header">
   <h1 class="blog-title"><%=@article.title%></h1>
+  </div>
+
  <span class ="quiet"><small>Created <%= time_ago_in_words(@article.created_at) %> ago </small></span>
-  <p class="lead blog-description"><%=simple_format(@article.text) %></p>
-</div>
+  <div class= "blog-post well"><%=@article.text %></div>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
