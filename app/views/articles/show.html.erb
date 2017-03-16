@@ -13,7 +13,7 @@
   </div>
 
  <span class ="quiet"><small>Created <%= time_ago_in_words(@article.created_at) %> ago </small></span>
-  <div class= "blog-post well"><%=@article.text %></div>
+  <div class= "blog-post well"><%=simple_format(@article.text) %></div>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
