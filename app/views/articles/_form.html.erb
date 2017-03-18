@@ -1,31 +1,31 @@
-<%= form_for @article do |f| %>
- 
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<div class = "row">
+  <div class = "col-md-12">
+<%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="form-group">
+    <div class="control-label col-md-2">
+      <%= f.label :title %>
     </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+    <div class ="col-md-8">
+      <%= f.text_field :title, class: "form-control", placeholder: "Name of recipe", autofocus: true %>
+      
+    </div>
+  </div>
+  <div class ="form-group">
+    <div class="control-label col-md-2">
+      <%= f.label :text %>
+    </div>
+    <div class ="col-md-8">
+      <%= f.text_area :text, rows: 10, class: "form-control", placeholder: "Enter steps to create recipe" %>
+    </div>
+  </div>
+  <div class = "form-group">
+    <div class ="col-md-offset-2 col-md-10">
+<%= f.submit class: "btn btn-primary btn-lg btn-x btn-xlarge"  %>
+</div>
+</div>
+<div class ="col-md-4 col-md-offset-4 colormatch">
+  [ <%=link_to "Return to Index", articles_path%> ]
+</div>
 <% end %>
+</div>
+</div>
