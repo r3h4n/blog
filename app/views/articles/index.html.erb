@@ -1,4 +1,4 @@
-
+ 
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
@@ -20,20 +20,27 @@
   <div class="col-sm-8 blog-main">
 
     <div class="blog-post">
-      <%@articles.order(:created_at).reverse_each do |article| %>
-      <h2 class="blog-post-title"><%=link_to article.title, article_path(article)%></h2>
-        <span class ="quiet"><small>Created <%= time_ago_in_words(article.created_at) %> ago </small></span>
-      <p><span><%= link_to 'Edit', edit_article_path(article) %></span> 
-      <span><%= link_to 'Delete', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %> </span>
+  
+  
+  <%@articles.order(:created_at).reverse_each do |article| %>
+      <div class="span8">
+    <h1><%=link_to article.title, article_path(article)%></h1>
+      <small>Posted <%= time_ago_in_words(article.created_at) %> ago</small>
+    <p class ="blog-text"><%= truncate(article.text, length: 300) %> <%if article.text.length > 300 %> <%=link_to 'See more', article_path(article) %><%end %></p>
+    <div>
+     <span class="badge-success"> 
+        <%=link_to article_path(article) do %>
+        Comments (<%=article.comments.count %>)
+        <% end %>
       
-      </p>
-            <p><%= truncate(article.text, length: 300) %> <%if article.text.length > 300 %> <%=link_to 'See more', article_path(article) %><%end %></p>
-      <% end %>
+        </span>
+    </div> 
     </div>
-
+    <hr/>
+            <% end %>
     </div>
+    </div>
+    
     
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
