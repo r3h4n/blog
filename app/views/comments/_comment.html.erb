@@ -1,15 +1,35 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+        <section class="comment-list">
+          <!-- First Comment -->
+          <article class="row">
+            <div class="col-md-2 col-sm-2 hidden-xs">
+              <figure class="thumbnail">
+                <img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
+                <figcaption class="text-center"><%= comment.commenter %></figcaption>
+              </figure>
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <div class="panel panel-default arrow left">
+                <div class="panel-body">
+                  <header class="text-left">
+                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> <%= time_ago_in_words(comment.created_at)%>               <%= link_to 'Delete', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+               data: { confirm: 'Are you sure?' } %></time>
+                  </header>
+                  <div class="comment-post">
+                    <p>
+                      <%=comment.body %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </article>
+          
+        </section>
+    </div>
+  </div>
+</div>

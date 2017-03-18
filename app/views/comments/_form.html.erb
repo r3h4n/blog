@@ -1,13 +1,27 @@
+ <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<div class="container">
+	<div class="row">
+		<h3>Leave a comment</h3>
+	</div>
+    
+    <div class="row">
+    
+    <div class="col-md-6">
+    						<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									<form>
+
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :commenter %><br>
+    <%= f.label :Name %>
     <%= f.text_field :commenter %>
   </p>
   <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.label :Comment %><br>
+    <%= f.text_area :body, placeholder: "Write a comment" %>
   </p>
   <p>
     <%= f.submit %>
+
   </p>
 <% end %>
