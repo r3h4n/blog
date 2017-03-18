@@ -9,7 +9,6 @@
     <div class="col-md-6">
     						<div class="widget-area no-padding blank">
 								<div class="status-upload">
-									<form>
 
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
@@ -18,7 +17,7 @@
   </p>
   <p>
     <%= f.label :Comment %><br>
-    <%= f.text_area :body, placeholder: "Write a comment" %>
+    <%= f.text_area :body %>
   </p>
   <p>
     <%= f.submit %>
