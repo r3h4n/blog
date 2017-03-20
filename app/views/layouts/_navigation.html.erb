@@ -29,19 +29,10 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <%= form_tag(articles_path, :method => "get", class: "form-control", id: "search-form") do %>
+          <%= form_tag(articles_path, :method => "get", class: "navbar-form navbar-left form-group", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
 <%= submit_tag "Search", class: "btn btn-default" %>
 <% end %>
-
-
-        
-        </div>
-
-      </form>
-    
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

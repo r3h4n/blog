@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
   http_basic_authenticate_with name: "rehan", password: "secret", except: [:index, :show]
-  
+
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 3)
     @articles = @articles.reorder('created_at DESC')
@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
   def create
       @article = Article.new(article_params)
       if @article.save
+      flash[:notice] = "Post created successfully!"
       redirect_to @article
     else
       render 'new'
@@ -35,8 +36,8 @@ class ArticlesController < ApplicationController
 
   def update
   @article = Article.find(params[:id])
- 
   if @article.update(article_params)
+    flash[:success] = "Post was updated successfully"
     redirect_to @article
   else
     render 'edit'
@@ -55,4 +56,5 @@ end
     def article_params
       params.require(:article).permit(:title, :text)
     end
+    
 end
