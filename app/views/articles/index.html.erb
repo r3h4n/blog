@@ -39,12 +39,14 @@
     </div>
     <hr/>
             <% end %>
-<center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
+            
+<center><%= will_paginate @artices, renderer: BootstrapPagination::Rails %></center>
 
     </div>
-
-    </div>
-
+  <% if !@articles.present? %>
+    <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+  <% end %>
+  </div>
     
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
