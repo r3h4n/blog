@@ -5,6 +5,11 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 3)
     @articles = @articles.reorder('created_at DESC')
+    
+    if params[:search]
+      @articles = Article.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
+      @articles = @articles.reorder('created_at DESC')
+    end
   end
   
   def show
