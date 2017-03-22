@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :todos
   get 'welcome/index'
   
   resources :articles do
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   end
   
   root 'articles#index'
+  resources :todos
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

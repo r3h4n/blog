@@ -46,22 +46,35 @@
   <% if !@articles.present? %>
     <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
   <% end %>
+
   </div>
     
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <div class="sidebar-module">
-            <h4 class ="project_heading">Todo's</h4><hr/>
-            <ol class="list-unstyled">
-              <li>Complete Udemy Course (<%=link_to 'link', 'https://www.udemy.com/pro-ruby-on-rails-rails5' %>)</li><br/>
-              <li> Read Kehoe's Tutorial (<%=link_to 'link', 'http://learn-rails.com/' %>)</li><br/>
-              <li> Read Hartl's Tutorial (<%=link_to 'link', 'https://www.railstutorial.org' %>)</li><br/>
-              <li> Finish Launschool Course (<%=link_to 'link', 'https://www.launchschool.com' %>)</li><br/>
-              <li> *Make this Todo list Dynamic*</li>
-            </ol>
-          </div>
-          </div>
-          </div>
+          <div class=" sidebar-module-inset">
+            <h4 class ="project_heading">My Todos</h4><hr/>
+  <ol id="results">
+    <% @todos = Todo.all %>
+<% @todos.each do |todo| %>
+  <!-- This `id` attribute will help us find the correct element to remove using jQuery -->
+ <span> <li id="<%= todo.id %>"> </span>
+    <%= todo.description %> <%= link_to "", todo_path(todo), method: 'delete', class: "glyphicon glyphicon-ok", remote: true %>
+  </li>
+  <hr/>
 
-  
+<% end %>
+</ol>   
+<%= form_for Todo.new, remote: true do |f| %>
+  <div class="form-group">
+    <%= f.text_field :description, placeholder:
+    "what needs doing?" %>
+  </div>
+
+  <div class="form-group todo">
+  <%= f.submit %>
+  </div>
+<% end %>
+
+          </div>
+          </div>
+          
     </div><!-- /.container -->

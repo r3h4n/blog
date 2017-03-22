@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
       @articles = Article.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
       @articles = @articles.reorder('created_at DESC')
     end
+    
   end
   
   def show
@@ -25,6 +26,7 @@ class ArticlesController < ApplicationController
   end
   
   def create
+    
       @article = Article.new(article_params)
       if @article.save
       flash[:notice] = "Post created successfully!"

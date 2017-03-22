@@ -13,7 +13,9 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem 'pry'
 # Use sqlite3 as the database for Active Record
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
