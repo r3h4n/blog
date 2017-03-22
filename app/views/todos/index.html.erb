@@ -1,0 +1,13 @@
+  <ul>
+    <% @todos = Todo.all %>
+<% @todos.each do |todo| %>
+  <!-- This `id` attribute will help us find the correct element to remove using jQuery -->
+  <li id="<%= todo.id %>">
+    <%= todo.description %><br>
+    <strong>priority: </strong><%= todo.priority %><br>
+
+    <!-- Add `remote: true` to the line below -->
+    <%= link_to "", todo_path(todo), method: 'delete', remote: true %>
+  </li>
+<% end %>
+</ul>   
