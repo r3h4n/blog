@@ -9,7 +9,6 @@ def create
   @todo = Todo.create(todo_params)
   respond_to do |format|
     # if the response fomat is html, redirect as usual
-    format.html { redirect_to root_path }
     # if the response format is javascript, do something else...
     format.js { }
   end
@@ -20,7 +19,6 @@ end
     @todo.destroy
     
     respond_to do |format|
-    format.html { redirect_to root_path }
     format.js { }
   end  
 end
