@@ -27,6 +27,6 @@ end
 
   private
     def todo_params
-      params.require(:todo).permit(:description, :priority)
+      params.require(:todo).permit(:description)
     end
 end
