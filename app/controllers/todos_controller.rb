@@ -25,10 +25,6 @@ end
   end  
 end
 
-def show
-  redirect_to root_path
-end
-
   private
     def todo_params
       params.require(:todo).permit(:description)
