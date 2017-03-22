@@ -25,6 +25,10 @@ end
   end  
 end
 
+def show
+  
+end
+
   private
     def todo_params
       params.require(:todo).permit(:description)
