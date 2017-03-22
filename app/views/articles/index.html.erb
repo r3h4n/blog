@@ -52,27 +52,9 @@
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class=" sidebar-module-inset">
             <h4 class ="project_heading">My Todos</h4><hr/>
-  <ol id="results">
-    <% @todos = Todo.all %>
-<% @todos.each do |todo| %>
-  <!-- This `id` attribute will help us find the correct element to remove using jQuery -->
- <span> <li id="<%= todo.id %>"> </span>
-    <%= todo.description %> <%= link_to "", todo_path(todo), method: 'delete', class: "glyphicon glyphicon-ok", remote: true %>
-  </li>
-  <hr/>
-
-<% end %>
-</ol>   
-<%= form_for Todo.new, remote: true do |f| %>
-  <div class="form-group">
-    <%= f.text_field :description, placeholder:
-    "what needs doing?" %>
-  </div>
-
-  <div class="form-group todo">
-  <%= f.submit %>
-  </div>
-<% end %>
+  <ul>
+    <li>Test</li>
+  </ul>
 
           </div>
           </div>
