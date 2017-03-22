@@ -57,7 +57,7 @@
 <% @todos.each do |todo| %>
   <!-- This `id` attribute will help us find the correct element to remove using jQuery -->
  <span> <li id="<%= todo.id %>"> </span>
-    <%= todo.description %> <%= link_to "", todo_path(todo), method: 'delete', class: "glyphicon glyphicon-ok", remote: true %>
+    <%= todo.description %> <%= link_to "", method: 'delete', class: "glyphicon glyphicon-ok", remote: true %>
   </li>
   <hr/>
 
