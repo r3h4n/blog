@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   
-  http_basic_authenticate_with name: "rehan", password: "secret", except: [:index, :show]
+  # http_basic_authenticate_with name: "rehan", password: "secret", except: [:index, :show]
 
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 3)
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
       @article = Article.new(article_params)
       if @article.save
       flash[:notice] = "Post created successfully!"
-      redirect_to @article
+      redirect_to article_path(@article)
     else
       render 'new'
     end
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
   @article = Article.find(params[:id])
   if @article.update(article_params)
     flash[:success] = "Post was updated successfully"
-    redirect_to @article
+    redirect_to article_path(@article)
   else
     render 'edit'
   end
