@@ -14,7 +14,11 @@
 <div class="blog-header">
   <h1 class="blog-title">The Ruby on Ray's Blog</h1>
   <p class="lead blog-description">This is my very initial attempt at creating a blog using Ruby on Rails.</p>
-<span><%= link_to 'New Post', new_article_path %></span>
+
+
+<% if logged_in? && current_user.admin? %> 
+  <span><%= link_to 'New Post', new_article_path %></span>
+  <% end %>
 </div>
 
 <div class="row">
@@ -26,6 +30,7 @@
   <%@articles.each do |article| %>
       <div class="span8">
     <h1><%=link_to article.title, article_path(article)%></h1>
+      <small> Posted by: <%= article.user.username %></small><br/>
       <small>Posted <%= time_ago_in_words(article.created_at) %> ago</small>
     <p class ="blog-text"><%= truncate(article.text, length: 300) %> <%if article.text.length > 300 %> <%=link_to 'See more', article_path(article) %><%end %></p>
     <div>
