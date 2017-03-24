@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  
+  before_action :set_article, only: [:show, :edit, :update, :destroy] # run this line of code for show/edit/update before anything in the method below
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   # http_basic_authenticate_with name: "rehan", password: "secret", except: [:index, :show]
 
   def index
@@ -14,7 +16,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    @article = Article.find(params[:id])
+    set_article
   end
   
   def new
@@ -22,12 +24,12 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    @article = Article.find(params[:id])
+    set_article
   end
   
-  def create
-    
+  def create 
       @article = Article.new(article_params)
+      @article.user = current_user
       if @article.save
       flash[:notice] = "Post created successfully!"
       redirect_to article_path(@article)
@@ -37,7 +39,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-  @article = Article.find(params[:id])
   if @article.update(article_params)
     flash[:success] = "Post was updated successfully"
     redirect_to article_path(@article)
@@ -47,9 +48,8 @@ class ArticlesController < ApplicationController
 end
 
   def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
-   
+    set_article.destroy
+   flash[:success] = "Post deleted successfully"
     redirect_to articles_path
   end
 
@@ -58,5 +58,16 @@ end
     def article_params
       params.require(:article).permit(:title, :text)
     end
+    
+      def set_article
+     @article = Article.find(params[:id])
+  end
+   
+   def require_same_user
+    if current_user != @article.user and !current_user.admin?
+      flash[:danger] = "You can only edit or delete your own recipes"
+      redirect_to articles_path
+    end
+  end
     
 end
