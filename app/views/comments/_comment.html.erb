@@ -14,12 +14,12 @@
               <div class="panel panel-default arrow left">
                 <div class="panel-body">
                   <header class="text-left">
-                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> <%= time_ago_in_words(comment.created_at)%> ago  <%= link_to 'Delete', [comment.article, comment],
+                    <small>Posted <%= time_ago_in_words(comment.created_at)%> ago  <%= link_to 'Delete', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %></time>
+               data: { confirm: 'Are you sure?' } %></small>
                   </header>
                   <div class="comment-post">
-                    <p>
+                    <p><br/>
                       <%=comment.body %>
                     </p>
                   </div>
