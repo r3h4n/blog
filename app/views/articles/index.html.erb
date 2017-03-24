@@ -17,7 +17,7 @@
 
 
 <% if logged_in? && current_user.admin? %> 
-  <span><%= link_to 'New Post', new_article_path %></span>
+  <%= link_to 'New Post', new_article_path, class: "btn btn-xs btn-success" %>
   <% end %>
 </div>
 
