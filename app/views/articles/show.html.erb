@@ -1,21 +1,22 @@
-<div class="container">
-
-<div class="blog-header">
-  <h1 class="blog-title"><%=@article.title%></h1>
+<div class="letter">
+  <h1 class="blog-title-show"><%=@article.title%></h1>
   <% if logged_in? && (current_user == @article.user || current_user.admin?) %> 
-  <%= link_to 'Edit', edit_article_path(@article) %>
+  <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-xs btn-primary" %>
     <%= link_to "Delete", article_path(@article), method: :delete,
                                       data: { confirm: "Are you sure you want to delete this post?" },
                                       class: "btn btn-xs btn-danger" %>
-                                      <% end %>
-<%= link_to 'Back', articles_path %>
-  </div>
-  <small> Posted by: <%= @article.user.username %></small><br/>
- <span class ="quiet"><small>Created <%= time_ago_in_words(@article.created_at) %> ago </small></span>
-  <div class= "blog-post well"><%=simple_format(@article.text) %></div>
+                                      <% end %><br/>
   
+  <small> Posted by: <%=link_to "#{@article.user.username}", @article.user %></small><br/>
+ <span class ="quiet"><small>Created <%= time_ago_in_words(@article.created_at) %> ago </small></span>
+  <p>  <%=simple_format(@article.text) %></p><br/>
+  <h3 align = "center"><%= link_to 'Back to index', articles_path %></h3>
+
+  </div>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
 
 <%= render 'comments/form' %>
+
+
