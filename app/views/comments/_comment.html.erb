@@ -1,35 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-        <section class="comment-list">
-          <!-- First Comment -->
-          <article class="row">
-            <div class="col-md-2 col-sm-2 hidden-xs">
-              <figure class="thumbnail">
-                <img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
-                <figcaption class="text-center"><%= comment.commenter %></figcaption>
-              </figure>
-            </div>
-            <div class="col-md-10 col-sm-10">
-              <div class="panel panel-default arrow left">
-                <div class="panel-body">
-                  <header class="text-left">
-                    <small>Posted <%= time_ago_in_words(comment.created_at)%> ago  <%= link_to 'Delete', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %></small>
-                  </header>
-                  <div class="comment-post">
-                    <p><br/>
-                      <%=comment.body %>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </article>
-          
-        </section>
-    </div>
+<div class = "row">
+  <div class="col-md-2">
+    <section class="user_info center">
+      USER PHOTO WILL GO HERE
+    </section>
+  </div>
+  <div class = "col-md-8 well">
+    <p>
+      <%= comment.body %>
+    </p>
+    <p>
+      <span class="quiet"><small>Created: <%= time_ago_in_words(comment.created_at) %> ago by
+                                  <%= comment.user.username %></small></span>
+    </p>
   </div>
 </div>
