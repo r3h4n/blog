@@ -5,8 +5,9 @@ class CommentsController < ApplicationController
     @comment = @article.comments.create(comment_params)
     @comment.user = current_user
     if @comment.save
-      flash[:success] = "Comment was created successfully"
-      redirect_to article_path(@article)
+      ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment)
+      # flash[:success] = "Comment was created successfully"
+      # redirect_to article_path(@article)
     else
       flash[:danger] = "comment was not created"
     redirect_to :back
@@ -23,6 +24,6 @@ end
 
   private
     def comment_params
-      params.require(:comment).permit(:commenter, :body)
+      params.require(:comment).permit(:body)
     end
 end
