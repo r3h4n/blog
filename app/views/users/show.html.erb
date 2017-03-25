@@ -21,16 +21,16 @@
               <div class="row">
                 <div class="col-md-6">
                   <span class="text-muted">Email: <%=@user.email%></span><br>
-                  <span class="text-muted">Birth date:</span> 01.01.2001<br>
-                  <span class="text-muted">Gender:</span> male<br><br>
-                  <small class="text-muted">Created: 01.01.2015</small>
+                  <span class="text-muted">Birth date:</span> <br>
+                  <span class="text-muted">Gender:</span> <br><br>
+                  <small class="text-muted">Created: <%=time_ago_in_words(@user.created_at)%> ago</small>
                 </div>
                 <div class="col-md-6">
                   <div class="activity-mini">
-                    <i class="glyphicon glyphicon-comment text-muted"></i> 500
+                    <i class="glyphicon glyphicon-comment text-muted"></i> 0
                   </div>
                   <div class="activity-mini">
-                    <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
+                    <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 0
                   </div>
                 </div>
               </div>
