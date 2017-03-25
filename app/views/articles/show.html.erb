@@ -19,7 +19,7 @@
     <div class = "col-md-8 cold-md-offset-2">
       <h3>Comments: </h3>
       <hr/>
-  <%= form_for([@article, @comment], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <%= form_for([@article, @comment], remote: true, :html => {class: "form-horizontal", role: "form"}) do |f| %>
     
     <div class ="form-group">
       <div class="control-label col-md-2">
@@ -41,7 +41,7 @@
 <% else %>
 <br/>
 <br/>
-<small><div align = "center"> You must be logged in to leave a comment.</small>
+<small><div align = "center"> You must be logged in to leave a comment.</small></div>
 <% end %>
   
 <% if @article.comments != 0 %>
