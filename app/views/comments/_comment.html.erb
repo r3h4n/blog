@@ -27,9 +27,11 @@
                     <!--        <i class="fa fa-thumbs-down icon"></i>12-->
                     <!--    </a>-->
                     <!--</div>-->
+<% if logged_in? && (current_user == comment.user || current_user.admin?) %>
 <%= link_to "Delete Comment", [comment.article, comment], method: :delete, remote: true, 
                                       data: { confirm: "Are you sure you want to delete this recipe?" },
                                       class: "btn btn-xs btn-danger" %>     
+                                      <% end %>
                 </div>
                  </div>
         </div>
