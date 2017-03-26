@@ -11,6 +11,8 @@
 
   <body>
     <%= render 'layouts/navigation' %>
+    <%= render 'layouts/messages' %>
+    
     <% if logged_in? && current_user.admin? %> 
     <div class = "admin-notification"><%= p 'Logged in as Administrator'%></div>
     <% end %>

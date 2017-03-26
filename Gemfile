@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'will_paginate', '~> 3.1.0'
+gem 'pry'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.0'

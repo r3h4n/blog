@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
       # flash[:success] = "Comment was created successfully"
       # redirect_to article_path(@article)
     else
-      flash[:danger] = "comment was not created"
-    redirect_to :back
+      flash[:danger] = "Comments must be a minimum of 5 characters"
+      redirect_to :back
   end
 end
 
@@ -20,7 +20,6 @@ def destroy
     @comment.destroy
     redirect_to article_path(@article)
   end
-
 
   private
     def comment_params
