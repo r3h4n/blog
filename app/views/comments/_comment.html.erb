@@ -1,16 +1,30 @@
-<div class = "row">
-  <div class="col-md-2">
-    <section class="user_info center">
-      USER PHOTO WILL GO HERE
-    </section>
-  </div>
-  <div class = "col-md-8 well">
-    <p>
-      <%= comment.body %>
-    </p>
-    <p>
-      <span class="quiet"><small>Created: <%= time_ago_in_words(comment.created_at) %> ago by
-                                  <%= comment.user.username %></small></span><br/>
-    </p>
-  </div>
-</div>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="panel panel-white post panel-shadow">
+                <div class="post-heading">
+                    <div class="pull-left image">
+                        <img src="http://robohash.org/sitsequiquia.png?size=120x120" class="img-circle avatar" alt="user profile image">
+                    </div>
+                    <div class="pull-left meta">
+                        <div class="title h5">
+                            <b><%= link_to comment.user.username.capitalize, comment.user %></b>
+                            made a post.
+                        </div>
+                        <h6 class="text-muted time"><%= time_ago_in_words(comment.created_at) %> ago</h6>
+                    </div>
+                </div> 
+                <div class="post-description"> 
+                    <p><%= comment.body %></p>
+                    <!--<div class="stats">-->
+                    <!--    <a href="#" class="btn btn-default stat-item">-->
+                    <!--        <i class="fa fa-thumbs-up icon"></i>2-->
+                    <!--    </a>-->
+                    <!--    <a href="#" class="btn btn-default stat-item">-->
+                    <!--        <i class="fa fa-thumbs-down icon"></i>12-->
+                    <!--    </a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
