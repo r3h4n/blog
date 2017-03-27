@@ -87,6 +87,7 @@ body {
   right: 0;
   top: 150px;
   width: 80;
+
 }
 
 .message-container {
@@ -112,4 +113,5 @@ body {
   height: 16em;
   position: relative;
   overflow: auto;
+  resize: both;
 }
