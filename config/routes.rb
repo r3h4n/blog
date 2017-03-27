@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'items/index'
+
   get 'welcome/index'
   
   get 'signup', to: 'users#new'
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get '/chat', to: 'chatrooms#show'
   
   resources :messages, only: [:create]
+  
+  resources :items
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

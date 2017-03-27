@@ -39,3 +39,19 @@ $(document).on('turbolinks:load', function() {
 })
  scrollToBottom();
 });
+
+
+// Todo list - creating a new todo item on index view
+
+$(function() {
+  $("#new_item").off('keypress');
+  $("#new_item").on('keypress', function(e) {
+    // when user hits enter key, it would perform the creation
+    if(e.keyCode == 13) {
+      // App.item would dispatch the creation function
+      // on ItemChannel ruby instance
+      App.item.create($(this).val());
+      $(this).val("");
+    }
+  });
+});
