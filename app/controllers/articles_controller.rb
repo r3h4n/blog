@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # http_basic_authenticate_with name: "rehan", password: "secret", except: [:index, :show]
 
   def index
-      @done_items = Item.where(is_done: true)
+  @done_items = Item.where(is_done: true)
   @undone_items = Item.where(is_done: false)
   
     @articles = Article.paginate(:page => params[:page], :per_page => 3)
