@@ -12,5 +12,4 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to articles_path
   end
-  
 end

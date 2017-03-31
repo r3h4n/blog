@@ -1,0 +1,22 @@
+<% if @average == 0 %>
+<span>No reviews, yet.</span>
+
+<% elsif (@average > 0.2) && (@average < 0.29)  %>
+ <span class="glyphicon glyphicon-star"></span>
+  <% elsif (@average >= 0.29) && (@average < 0.39) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star half"></span>
+  <% elsif (@average >= 0.39) && (@average < 0.49) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+  <% elsif (@average >= 0.49) && (@average < 0.59) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star half"></span>
+  <% elsif (@average >= 0.59) && (@average < 0.69) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+  <% elsif (@average >= 0.69) && (@average < 0.79) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star half"></span>
+  <% elsif (@average >= 0.79) && (@average < 0.89) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+  <% elsif (@average >= 0.89) %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+ <% end %> 
+ 
+<%= p @average %>

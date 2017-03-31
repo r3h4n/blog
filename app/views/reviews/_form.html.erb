@@ -1,0 +1,12 @@
+<%= form_for([@tutorial, @tutorial.reviews.build]) do |f| %>
+
+      <%= f.label :rating %>
+      <%= f.number_field :rating, in: 1..5, step: 1, class: "form-control", placeholder: "Leave a rating between 1-5", autofocus: true %>
+      <br/>
+      <%= f.label :comment %>
+      <%= f.text_area :comment, rows: 10, class: "form-control", placeholder: "Type type type" %><br/>
+<%= f.submit :submit, class: "btn btn-primary btn-lg btn-x btn-xlarge"  %>
+  <% end %>
+  
+  
+  

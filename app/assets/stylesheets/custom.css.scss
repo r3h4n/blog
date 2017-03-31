@@ -115,3 +115,56 @@ body {
   overflow: auto;
   resize: both;
 }
+
+.book {
+  height: 350px;
+  width: 250px;
+}
+
+.book-show {
+  height: 475px;
+  width: 325px;
+}
+
+.tutorial-options {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+
+.bookstart {
+  margin-top: 75px;
+}
+
+
+// STAR RATING
+
+.glyphicon-star {
+  font-size: 30px;
+  color: #e67e22;
+  &.half {
+    position: relative;
+    &:before {
+      position: relative;
+      z-index: 9;
+      width: 47%;
+      display: block;
+      overflow: hidden;
+    }
+    &:after {
+      content: '\e006';
+      position: absolute;
+      z-index: 8;
+      color: #bdc3c7;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/// END OF STAR RATING
+
+
+.current-category {
+  position: absolute;
+}

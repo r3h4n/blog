@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :tutorials
+  has_many :reviews
   has_secure_password
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true
 end
