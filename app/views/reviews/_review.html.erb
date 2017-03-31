@@ -1,0 +1,26 @@
+<div class="review">
+<br/>
+  <p> <% if review.rating == 1  %>
+ <span class="glyphicon glyphicon-star"></span>
+  <% elsif review.rating == 2 %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+  <% elsif review.rating == 3 %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+  <% elsif review.rating == 4 %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+  <% elsif review.rating == 5 %>
+ <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+ <% end %> 
+ 
+ <small> <br/>reviewed by: <%= link_to review.user.username, review.user %> </p></small>
+  <div class="review-comment">
+  <p><%= review.comment%> </p>
+  </div>
+  
+    <% if logged_in? && (current_user.id == review.user_id || current_user.admin?) %> 
+  <div class="btn-group">
+  <%= link_to "Edit", edit_tutorial_review_path(review.tutorial, review),  class: "btn btn-custom" %>
+      <%= link_to "Delete", tutorial_review_path(review.tutorial, review), class: "btn btn-custom", method: :delete,
+                                        data: { confirm: "Are you sure you want to delete this post?" } %>
+                                        <% end %>
+</div>

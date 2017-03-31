@@ -1,7 +1,7 @@
 <li data-id='<%= item.id %>'>
 
   <input type='checkbox' id='item_<%= item.id %>'
-         class='item-done' <%= item.is_done ? "checked" : "" %> />
+         class='item-done' <%= item.is_done ? "checked" : "" %> data-remote="true"/>
   <span class='item-description'><%= item.description %></span>
   <span class='edit-item-description hidden'>
     <input type='text' />

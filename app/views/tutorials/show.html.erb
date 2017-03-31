@@ -1,0 +1,40 @@
+<div class="show-page">
+<div class="row tut-img">
+  <div class="col-md-4">
+  <%= image_tag @tutorial.tutorial_img, class: "book-show" %>
+<div class="links btn btn-custom">
+  <%= link_to "Add Review", new_tutorial_review_path(@tutorial) %>
+</div>
+  
+
+</div>
+
+
+
+<div class="col-md-7">
+<div class="book-info">
+  <h2 class="book-title"><%=@tutorial.title%><small>
+  <% if logged_in?  %>
+  <% if @tutorial.user_id == current_user.id %>
+  <%= link_to "edit", edit_tutorial_path(@tutorial)  %>
+  <%= link_to "delete", tutorial_path(@tutorial), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <% end %>
+  </small>
+  </h2>
+
+  <h3 class ="book-author"><span>From: </span><%=@tutorial.author%></h3>
+  <div class="average-review-rating"><%=render 'average' %></div>
+  <span class"number-of-reviews">Based on <%=@tutorial.reviews.count%> ratings</span><hr/>
+  <p class = "book-description"><%=@tutorial.description%></p>
+</div>
+  <hr/>
+<div class="reviews">
+  <%= render @tutorial.reviews %>
+  </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>

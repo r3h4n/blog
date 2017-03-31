@@ -52,4 +52,11 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_cable.disable_request_forgery_protection = true
+  
+  
+  Paperclip.options[:command_path] = "/usr/bin/convert"
+
+config.reload_classes_only_on_change = false
+config.cache_classes = false 
+
 end
