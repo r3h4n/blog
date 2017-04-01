@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require bootstrap/dropdown
 //= require turbolinks
 //= require_tree .
-//= require bootstrap/dropdown
 
 
 function scrollToBottom(){
