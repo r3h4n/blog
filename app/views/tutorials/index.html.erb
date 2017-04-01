@@ -7,15 +7,17 @@
 <%= link_to 'Submit New Course', new_tutorial_path, class: "btn-custom2" %>
 </div>
 </div>
-<div class = "nav navbar-nav">
 
-      <%Category.all.each do |category| %>
-      <div class= "<%='active' if params[:category] == category.name %>">
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+<%Category.all.each do |category| %>
+      <li class= "<%='active' if params[:category] == category.name %>">
         <%= link_to category.name, tutorials_path(category: category.name) %>
     <% end %>
-    </div>
-  </div>
-  </div>
+  </ul>
+</div>
 
 <h3 class = "current-category" align="left">Category: <%=params[:category] %></h3><br/>
 
