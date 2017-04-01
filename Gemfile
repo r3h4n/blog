@@ -13,6 +13,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'pry'
 gem 'simple_form'
 gem 'paperclip', '~> 5.1'
+gem 'aws-sdk', '~> 2.3'
 
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server

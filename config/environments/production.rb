@@ -85,4 +85,17 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.web_socket_server_url = "wss://rehan-blog.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://rehan-blog.herokuapp.com', 'https://rehan-blog.herokuapp.com']
+
+# Amazon S3 Buckets
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('ruby-on-rays'),
+      access_key_id: ENV.fetch('AKIAIRGAA5EWC5WVUQ5Q'),
+      secret_access_key: ENV.fetch('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'),
+      s3_region: ENV.fetch('Canada'),
+    }
+  }
+
 end
