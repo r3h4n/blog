@@ -8,15 +8,13 @@
 </div>
 </div>
 <div class = "nav navbar-nav">
-  <li class="dropdown">
 
       <%Category.all.each do |category| %>
-      <li class= "<%='active' if params[:category] == category.name %>">
+      <div class= "<%='active' if params[:category] == category.name %>">
         <%= link_to category.name, tutorials_path(category: category.name) %>
     <% end %>
-      </li>
     </div>
-  </li>
+  </div>
   </div>
 
 <h3 class = "current-category" align="left">Category: <%=params[:category] %></h3><br/>
