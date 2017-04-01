@@ -8,7 +8,7 @@ class Tutorial < ApplicationRecord
   validates :tutorial_img, presence: true
   validates :category_id, presence: true
 
-  has_attached_file :tutorial_img,  :bucket => 'S3_BUCKET_NAME', styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :tutorial_img, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :tutorial_img, content_type: /\Aimage\/.*\z/
 
 end
