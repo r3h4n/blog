@@ -88,5 +88,5 @@ Rails.application.configure do
 
 # Amazon S3 Buckets
 
-  
+ 
 end
