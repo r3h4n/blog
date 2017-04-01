@@ -14,7 +14,7 @@
       <span = "category-text"><%= link_to category.name, tutorials_path(category: category.name) %> | </span>
     <% end %>
   </div>
-<h3 class = "current-category" align="left">Category: <%=params[:category] %></h3><br/>
+<h3 class = "current-category">Category: <%=params[:category] %></h3><br/>
 
 <% if @tutorials.count == 0 %>
 <br/><h3>Currently no books in this category</h3>

@@ -1,8 +1,7 @@
-
 <%= form_for(@tutorial, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %><br/><br/>
-
-
+<%= select_tag(:category_id, options_for_select( Category.all.map{ |c| [c.name, c.id] }
+                                                ), :prompt => "Select a category") %>
+                                                      <br/><br/>
       <%= f.label :title %>
       <%= f.text_field :title, class: "form-control", placeholder: "Name of post", autofocus: true %><br/>
       

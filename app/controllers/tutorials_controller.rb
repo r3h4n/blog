@@ -9,7 +9,6 @@ class TutorialsController < ApplicationController
     @category_id = Category.find_by(name: params[:category]).id
     @tutorials = Tutorial.where(:category_id => @category_id).order("created_at DESC")
     end
-    
     @category = Category.all
   end
   
@@ -23,7 +22,6 @@ class TutorialsController < ApplicationController
 
   def new
     @tutorial = current_user.tutorials.build
-    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
   
   def create
@@ -35,9 +33,7 @@ class TutorialsController < ApplicationController
       render 'new'
     end
   end
-  
 
-  
   def edit
         @categories = Category.all.map{ |c| [c.name, c.id] }
   end
@@ -56,7 +52,6 @@ class TutorialsController < ApplicationController
     redirect_to tutorials_path
   end
   
-  
   private
     def tutorial_params
       params.require(:tutorial).permit(:title, :description, :author, :category_id, :tutorial_img)
@@ -65,6 +60,5 @@ class TutorialsController < ApplicationController
     def find_tutorial
       @tutorial = Tutorial.find(params[:id])
     end
-  
-  
+
 end
