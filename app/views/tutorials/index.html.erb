@@ -10,7 +10,7 @@
 <div align="right">
   <strong>Filter:</strong>
 <%Category.all.each do |category| %>
-      <%='active' if params[:category] == category.name %>
+      <%='*' if params[:category] == category.name %>
       <span = "category-text"><%= link_to category.name, tutorials_path(category: category.name) %> | </span>
     <% end %>
   </div>
@@ -29,3 +29,4 @@
   <% end %>
 <% end %>
 </div>
+
