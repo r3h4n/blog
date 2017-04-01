@@ -9,6 +9,8 @@ class TutorialsController < ApplicationController
     @category_id = Category.find_by(name: params[:category]).id
     @tutorials = Tutorial.where(:category_id => @category_id).order("created_at DESC")
     end
+    
+    @category = Category.all
   end
   
   def show
