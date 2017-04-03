@@ -177,7 +177,6 @@ body {
   height: 400px;
   max-width: 475px;
   float: right;
-  margin-right: 22px;
   display: inline-block;
   background: #ffffff;
   padding: 20px 20px 20px 20px;
@@ -198,5 +197,13 @@ body {
 }
 
 .panel-header {
+  background: white;
+}
+
+.profile-container {
+  margin-left: 5px;
+  min-height: 1000px;
+  min-width: 675px;
+  float: left;
   background: white;
 }
