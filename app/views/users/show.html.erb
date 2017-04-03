@@ -54,13 +54,15 @@
   <h4>This page has no content, yet. You can <%= link_to "return to index", articles_path %>.</h4>
   
   <div class ="panel-feed">
+<h3>Check out some recent reviews</h3>
+
   <% @reviews.last(5).each do |rev| %>
-  <%=image_tag @tutorial.tutorial_img, class: "book-feed-size" %>
+  <%=image_tag rev.tutorial.tutorial_img, class: "book-feed-size" %>
   <div class = "description-feed">
-  <%= link_to rev.tutorial.title, tutorial_path(rev.tutorial) %><span><%= render 'reviews/review-rating', obj: rev %></span><br/>
+  <%= link_to rev.tutorial.title, tutorial_path(rev.tutorial) %><br/>
+  <%= render 'reviews/review-rating', obj: rev %>
   <%= rev.comment %>
 <hr/>
   </div>
-
 <% end %>
 </div>
