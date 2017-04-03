@@ -122,9 +122,10 @@ body {
   width: 250px;
 }
 
+
 .book-show {
-  height: 475px;
-  width: 325px;
+  height: 275px;
+  width: 125px;
 }
 
 .tutorial-options {
@@ -141,7 +142,7 @@ body {
 // STAR RATING
 
 .glyphicon-star {
-  font-size: 30px;
+  font-size: 25px;
   color: #e67e22;
   &.half {
     position: relative;
@@ -169,4 +170,28 @@ body {
 .current-category {
   position: absolute;
   margin-left: 40px;
+}
+
+.panel-feed {
+  overflow: scroll;
+  height: 400px;
+  max-width: 475px;
+  float: right;
+  margin-right: 22px;
+  display: inline-block;
+  
+}
+
+.content-container {
+  min-height: 150px;
+  max-height: 150px;
+  
+}
+
+.book-feed-size {
+  float: left;
+  height: 125;
+  width: 75;
+  margin: 0 10px 10px 0px;
+
 }
