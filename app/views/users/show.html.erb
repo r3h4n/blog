@@ -60,7 +60,7 @@
   <div class = "description-feed">
   <%= link_to rev.tutorial.title, tutorial_path(rev.tutorial) %><br/>
   <%= render 'reviews/review-rating', obj: rev %><br/>
-  <%= truncate(rev.comment, length: 300) %> <%if rev.comment.length > 300 %> <%=link_to 'See more', tutorial_path(rev.tutorial) %><%end %>
+  <%= truncate(rev.comment, length: 250) %> <%if rev.comment.length > 250 %> <%=link_to 'See more', tutorial_path(rev.tutorial) %><%end %>
 <hr/>
   </div>
 <% end %>
