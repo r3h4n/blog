@@ -179,6 +179,8 @@ body {
   float: right;
   margin-right: 22px;
   display: inline-block;
+    background: #ffffff;
+
   
 }
 
@@ -191,7 +193,10 @@ body {
 .book-feed-size {
   float: left;
   height: 125px;
-  width: 75px;
+  width: 125px;
   margin: 0 10px 10px 0px;
 
+}
+
+.feed-container {
 }
