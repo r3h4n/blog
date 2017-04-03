@@ -27,7 +27,11 @@
                 </div>
                 <div class="col-md-6">
                   <div class="activity-mini">
-                    <i class="glyphicon glyphicon-comment text-muted"></i> 0
+                    Reviews: <% if @user.reviews.count == 0 %>
+                    <%= link_to 'Write your first review!', tutorials_path %>
+                    <% else %>
+                    <%= @user.reviews.count %>
+                    <% end %>
                   </div>
                   <div class="activity-mini">
                     <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 0
@@ -48,3 +52,15 @@
 </div>
 </div>
   <h4>This page has no content, yet. You can <%= link_to "return to index", articles_path %>.</h4>
+  
+  <div class ="panel-feed">
+  <% @reviews.last(5).each do |rev| %>
+  <%=image_tag @tutorial.tutorial_img, class: "book-feed-size" %>
+  <div class = "description-feed">
+  <%= link_to rev.tutorial.title, tutorial_path(rev.tutorial) %><span><%= render 'reviews/review-rating', obj: rev %></span><br/>
+  <%= rev.comment %>
+<hr/>
+  </div>
+
+<% end %>
+</div>

@@ -1,9 +1,20 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  
+
   def new
     @user = User.new
+  end
+  
+  def show
+    @reviews = Review.all
+    
+    find_tutorial
+    if @tutorial.reviews.blank?
+      @average = 0
+    else
+      @average = (@tutorial.reviews.average(:rating).round(2)).fdiv(5)
+    end
   end
   
   def create
@@ -56,5 +67,8 @@ class UsersController < ApplicationController
     end
   end
   
+  def find_tutorial
+     @tutorial = Tutorial.find(params[:id])
+  end
   
 end
