@@ -3,7 +3,7 @@
   <small><em>Created <%= time_ago_in_words(message.created_at) %></em></small>
   </p>
   <p>
-  [USERPHOTO]
+  <%= image_tag current_user.avatar, class: "img-circle avatar avatar-chatroom" %>
   <strong><%= message.user.username.capitalize %></strong>
   <span class = "content"><%= message.content %></span>
   </p>
