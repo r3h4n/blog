@@ -9,11 +9,6 @@
           </div>
           <div class="row">
 			<div class="col-md-4 text-center">
-			  <% if @user.avatar.nil? %>
-              <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
-              display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
-              <% else %>
-
               <%= image_tag @user.avatar, class: "img-circle avatar avatar-original" %>
               <% end %>
             <%= form_for @user, url: @user, html: { multipart: true } do |form| %>
