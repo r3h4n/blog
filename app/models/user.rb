@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_secure_password
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true
-    validates :avatar, presence: true
+  validates :avatar, presence: true
     
 
   
