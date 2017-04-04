@@ -10,7 +10,6 @@
           <div class="row">
 			<div class="col-md-4 text-center">
               <%= image_tag @user.avatar, class: "img-circle avatar avatar-original" %>
-              <% end %>
             <%= form_for @user, url: @user, html: { multipart: true } do |form| %>
   <%= form.file_field :avatar %>
   <%= form.submit :submit %>
