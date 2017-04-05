@@ -58,20 +58,21 @@
   <h4>This page has no content, yet. You can <%= link_to "return to index", articles_path %>.</h4>
   
 
-  <div class ="panel-feed">
-  <% @reviews.last(5).reverse_each do |rev| %>
+ 
+
+<div class="scroll-bar-wrap">
+  <div class="scroll-box">
+     <% @reviews.last(5).reverse_each do |rev| %>
   <%=image_tag rev.tutorial.tutorial_img, class: "book-feed-size" %>
-  <div class = "description-feed">
   <%= link_to rev.tutorial.title, tutorial_path(rev.tutorial) %><br/>
   <%= render 'reviews/review-rating', obj: rev %><br/>
   <%= truncate(rev.comment, length: 250) %> <%if rev.comment.length > 250 %> <%=link_to 'See more', tutorial_path(rev.tutorial) %><%end %>
 <hr/>
-  </div>
 <% end %>
-</div>
+  <div class="cover-bar"></div>
+</div> 
 
-
-<div class = "profile-container">
-  efsesfesflesfoiejoijseofjsoeifjsoiefjosijfosif
+<!--<div class = "profile-container">-->
+<!--  efsesfesflesfoiejoijseofjsoeifjsoiefjosijfosif-->
   
-</div>
+<!--</div>-->
