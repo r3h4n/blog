@@ -1,10 +1,10 @@
 class CommentsChannel < ApplicationCable::Channel
-  def follow(params)
-    stop_all_streams
-    stream_from "article:#{params['article_id'].to_i}:comments"
+  def subscribed
+    stream_from "comments"
   end
 
-  def unfollow
-    stop_all_streams
+  def unsubscribed
+    # Any cleanup needed when channel is unsubscribed
   end
+  
 end

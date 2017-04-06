@@ -6,6 +6,10 @@ module ApplicationCable
       self.current_user = find_current_user
     end
     
+    def disconnect
+      
+    end
+    
     protected
     def find_current_user
       if current_user = User.find_by(id: cookies.signed[:user_id])
