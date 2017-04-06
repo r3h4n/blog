@@ -58,8 +58,13 @@ group :development do
 end
 
 group :production do
+<<<<<<< HEAD
   gem 'pg'
   gem 'redis'
+=======
+gem 'pg'
+gem 'redis'
+>>>>>>> 3fbe1046d29e92ab73039366db81cab52d36d264
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
