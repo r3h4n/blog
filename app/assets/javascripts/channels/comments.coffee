@@ -1,12 +1,19 @@
 App.comments = App.cable.subscriptions.create "CommentsChannel",
+  collection: -> $('#messages')
+
   connected: ->
-    # Called when the subscription is ready for use on the server
+    setTimeout =>
+      @followCurrentArticle()
+    , 1000
 
   disconnected: ->
-    # Called when the subscription has been terminated by the server
+
+  followCurrentArticle: ->
+    articleId = @collection().data('article-id')
+    if articleId
+      @perform 'follow', article_id: articleId
+    else
+      @perform 'unfollow'
 
   received: (data) ->
-    $("#messages .comment-fix:first").prepend(data)
-
-
-    # Called when there's incoming data on the websocket for this channel
+    @collection().append(data['comment'])

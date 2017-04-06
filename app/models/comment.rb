@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
   validates :user_id, presence: true
   validates :article_id, presence: true
   default_scope -> { order(updated_at: :desc)}
+  
+  after_create_commit { RenderCommentJob.perform_later self }
 end
