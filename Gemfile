@@ -57,14 +57,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-<<<<<<< HEAD
+group :production do  
   gem 'pg'
   gem 'redis'
-=======
-gem 'pg'
-gem 'redis'
->>>>>>> 3fbe1046d29e92ab73039366db81cab52d36d264
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
