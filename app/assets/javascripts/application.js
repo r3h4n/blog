@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require trix
 
 function scrollToBottom(){
  if($('#messages').length > 0) {

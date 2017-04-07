@@ -244,3 +244,9 @@ p {
    opacity: 0;
   -webkit-transition: all .5s;
 }
+
+.new-article {
+    overflow: auto;
+
+  resize: both;
+}

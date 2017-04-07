@@ -60,5 +60,6 @@ config.reload_classes_only_on_change = false
 config.cache_classes = false 
 
   config.web_console.whitelisted_ips = '24.246.58.78'
+config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
 end
