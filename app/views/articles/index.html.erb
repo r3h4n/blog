@@ -32,7 +32,7 @@
     <h1><%=link_to article.title, article_path(article)%></h1>
       <small>Posted <%= time_ago_in_words(article.created_at) %> ago</small><br/>
       <small> Posted by: <%= link_to article.user.username, article.user %></small><br/>
-    <br/><p class ="blog-text"><%= simple_format(article.text, length: 500) %> <%if article.text.length > 500 %> <%=link_to 'See more', article_path(article) %><%end %></p>
+    <br/><p class ="blog-text"><%= simple_format(article.text) %> <%if article.text.length > 500 %> <%=link_to 'See more', article_path(article) %><%end %></p>
     <div>
      <span class="badge-success"> 
         <%=link_to article_path(article) do %>
