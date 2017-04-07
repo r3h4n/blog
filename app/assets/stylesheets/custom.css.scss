@@ -247,6 +247,7 @@ p {
 
 .new-article {
     overflow: auto;
-
   resize: both;
+  min-height: 400px;
+  background-color: #ffffff;
 }
